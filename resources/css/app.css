@@ -1,0 +1,13 @@
+@import "bootstrap/dist/css/bootstrap.min.css"; 
+
+@import "../assets/css/vendors/perfect-scrollbar/perfect-scrollbar.css";
+@import "../assets/css/vendors/bootstrap-icons/bootstrap-icons.css";
+@import "../assets/css/client/client.css";
+/* @import"../assets/js/vendors/simple-datatables/style.css"; */
+@import url('https://unpkg.com/filepond/dist/filepond.css');
+@import url('https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css');
+
+@import "../assets/css/client/bootstrap.css";
+@import url('https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css');
+@import "../assets/css/client/style.css";
+@import "../assets/css/client/auth.css";
