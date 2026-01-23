@@ -1,10 +1,10 @@
      <div class="row mb-4">
          <div class="col-6 col-lg-3 col-md-6">
-             <div class="bg-white border rounded-3 p-4 shadow-sm 
+             <div class="bg-gradient-vr border rounded-4 p-4 shadow-sm 
             hover-shadow transition">
 
                  <div class="d-flex align-items-start justify-content-between mb-4">
-                     <div class="bg-primary p-3 rounded-3">
+                     <div class=" p-3 rounded-4" style="background-color: #fff3">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                              stroke-linejoin="round" class="text-white">
@@ -18,13 +18,13 @@
                          </svg>
                      </div>
                  </div>
-                 <h6 class="text-secondary small mb-1">
+                 <h6 class="small mb-1" style="color: #fffc">
                      Vehículos Registrados
                  </h6>
-                 <p class="text-dark fs-3 mb-1">
+                 <p class="text-white  fs-3 mb-1">
                      {{ user_car_stats()['total'] }}
                  </p>
-                 <p class="text-secondary small d-flex align-items-center gap-1 mb-0">
+                 <p class=" small d-flex align-items-center gap-1 mb-0" style="color: #fffc">
                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round">
@@ -37,11 +37,11 @@
 
          </div>
          <div class="col-6 col-lg-3 col-md-6">
-             <div class="bg-pr border rounded-3 p-4 shadow-sm 
+             <div class="bg-gradient-da border rounded-4 p-4 shadow-sm 
             hover-shadow transition">
 
                  <div class="d-flex align-items-start justify-content-between mb-4">
-                     <div class="bg-success p-3 rounded-3">
+                     <div class=" p-3 rounded-4" style="background-color: #fff3">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                              stroke-linejoin="round" class="lucide lucide-file-text w-5 h-5 sm:w-6 sm:h-6 text-white"
@@ -56,13 +56,13 @@
                          </svg>
                      </div>
                  </div>
-                 <h6 class="text-secondary small mb-1">
+                 <h6 class=" small mb-1" style="color: #fffc">
                      Documentos Activos
                  </h6>
-                 <p class="text-dark fs-3 mb-1">
+                 <p class="text-white fs-3 mb-1">
                      {{ user_document_stats()['active'] }}
                  </p>
-                 <p class="text-secondary small d-flex align-items-center gap-1 mb-0">
+                 <p class=" small d-flex align-items-center gap-1 mb-0" style="color: #fffc">
                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round">
@@ -74,11 +74,11 @@
              </div>
          </div>
          <div class="col-6 col-lg-3 col-md-6">
-             <div class="bg-white border rounded-3 p-4 shadow-sm 
+             <div class="bg-gradient-man border rounded-4 p-4 shadow-sm 
             hover-shadow transition">
 
                  <div class="d-flex align-items-start justify-content-between mb-4">
-                     <div class="bg-dark p-3 rounded-3">
+                     <div class=" p-3 rounded-3" style="background-color: #fff3">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                              stroke-linejoin="round" class="lucide lucide-wrench w-5 h-5 sm:w-6 sm:h-6 text-white"
@@ -89,12 +89,12 @@
                          </svg>
                      </div>
                  </div>
-                 <h6 class="text-secondary small mb-1">
+                 <h6 class=" small mb-1" style="color: #fffc">
                      Mantenimientos </h6>
-                 <p class="text-dark fs-3 mb-1">
+                 <p class="text-white fs-3 mb-1">
                      {{ user_maintenance_stats()['total'] }}
                  </p>
-                 <p class="text-secondary small d-flex align-items-center gap-1 mb-0">
+                 <p class=" small d-flex align-items-center gap-1 mb-0" style="color: #fffc">
                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round">
@@ -106,11 +106,11 @@
              </div>
          </div>
          <div class="col-6 col-lg-3 col-md-6">
-             <div class="bg-white border rounded-3 p-4 shadow-sm 
+             <div class="bg-gradient-rec border rounded-3 p-4 shadow-sm 
             hover-shadow transition">
 
                  <div class="d-flex align-items-start justify-content-between mb-4">
-                     <div class="bg-info p-3 rounded-3">
+                     <div class=" p-3 rounded-3" style="background-color: #fff3">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                              stroke-linejoin="round" class="lucide lucide-circle-alert w-5 h-5 sm:w-6 sm:h-6 text-white"
@@ -121,14 +121,14 @@
                          </svg>
                      </div>
                  </div>
-                 <h6 class="text-secondary small mb-1">
+                 <h6 class=" small mb-1" style="color: #fffc">
                      Recordatorios
                  </h6>
-                 <p class="text-dark fs-3 mb-1">
+                 <p class="text-white fs-3 mb-1">
                      {{ user_week_alerts()['total_month'] }}
 
                  </p>
-                 <p class="text-secondary small d-flex align-items-center gap-1 mb-0">
+                 <p class="small d-flex align-items-center gap-1 mb-0" style="color: #fffc">
                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round">

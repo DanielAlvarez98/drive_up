@@ -1,9 +1,9 @@
 <div id="sidebar" class="active">
-    <div class="sidebar-wrapper active">
-        <div class="sidebar-header">
-            <div class="d-flex justify-content-between">
+    <div class="sidebar-wrapper active" style="background-color: #2d4091">
+        <div class="sidebar-header" style="background-color: white">
+            <div class="d-flex justify-content-center">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset('storage/logos/logodrive.png') }}" alt="" width="240px"
+                    <a href="index.html"><img src="{{ asset('storage/logos/logodrive.png') }}" alt="" width="140px"
                             height="90px"></a>
                 </div>
                 <div class="toggler">
@@ -13,7 +13,7 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Menu</li>
+                {{-- <li class="sidebar-title">Menu</li> --}}
 
                 <li class="sidebar-item {{ setActive('home') }}">
                     <a href="{{ route('home') }}" class='sidebar-link'>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User\Car;
+use App\Models\User\Maintenance;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,11 @@ class HomeController extends Controller
 
         $today = Carbon::today();
         $limit = $today->copy()->addDays(10);
+        $limitAt = $today->copy()->subDays(10);
+
+        $mants = Maintenance::where('created_at', '>=', $limitAt)->get();
         $cars = auth()->user()->cars->map(function ($car) use ($today, $limit) {
+
 
             $alerts = [];
 
@@ -89,7 +94,7 @@ class HomeController extends Controller
             ];
         });
 
-        return view('home')->with('cars', $cars);
+        return view('home', compact('cars', 'mants'));
     }
 
     public function show(Car $car)

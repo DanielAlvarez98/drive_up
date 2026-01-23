@@ -791,7 +791,7 @@
     border-radius: 0.5rem;
     transition: all 0.5s;
     text-decoration: none;
-    color: #25396f;
+    color: #fff;
 }
 .sidebar-wrapper .menu .sidebar-link i,
 .sidebar-wrapper .menu .sidebar-link svg {
@@ -801,7 +801,7 @@
     margin-left: 1rem;
 }
 .sidebar-wrapper .menu .sidebar-link:hover {
-    background-color: #f0f1f5;
+    background-color: #3178bf;
 }
 .sidebar-wrapper .menu .sidebar-item {
     list-style: none;
@@ -817,7 +817,7 @@
     display: block;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
-    background-color: #435ebe;
+    background-color: #3178bf;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link span {
     color: #fff;
@@ -1223,6 +1223,19 @@ a {
 .bg-gradient-ltr {
     background: linear-gradient(90deg, #095cde, #53c3f3);
 }
+.bg-gradient-vr {
+  background: linear-gradient(to right, #3178bf, #7198bf);
+}
+.bg-gradient-da {
+  background: linear-gradient(to right, #2d7f91, #3178bf);
+}
+.bg-gradient-man {
+  background: linear-gradient(to right, #2d4091, #3178bf);
+}
+.bg-gradient-rec {
+  background: linear-gradient(to right, #7198bf, #2d7f91);
+}
+
 .bg-light-primary {
     background-color: #ebf3ff;
     color: #002152;
