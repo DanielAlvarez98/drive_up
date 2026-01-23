@@ -158,7 +158,7 @@
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
-                                                <img src="{{ asset('storage/logos/default.png') }}">
+                                                <img src="{{ asset('assets/logos/default.png') }}">
                                             </div>
                                         </div>
                                     </div>

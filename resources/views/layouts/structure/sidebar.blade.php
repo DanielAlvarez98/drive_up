@@ -3,7 +3,7 @@
         <div class="sidebar-header" style="background-color: white">
             <div class="d-flex justify-content-center">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset('storage/logos/logodrive.png') }}" alt="" width="140px"
+                    <a href="index.html"><img src="{{ asset('assets/logos/logodrive.png') }}" alt="" width="140px"
                             height="90px"></a>
                 </div>
                 <div class="toggler">

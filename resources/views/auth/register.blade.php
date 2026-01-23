@@ -79,7 +79,7 @@
         </div>
         <div class="col-lg-7 d-none d-lg-block p-0">
             <div id="auth-right" class="auth-right">
-                <img src="{{ asset('storage/logos/autodrive.png') }}" alt="Logo" class="auth-logo img-cover">
+                <img src="{{ asset('assets/logos/autodrive.png') }}" alt="Logo" class="auth-logo img-cover">
             </div>
 
         </div>
