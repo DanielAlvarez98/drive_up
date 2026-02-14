@@ -1,5 +1,4 @@
-/node_modules
-/vendor
+
 /.phpunit.cache
 /public/build
 /public/hot
