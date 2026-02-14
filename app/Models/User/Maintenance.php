@@ -17,6 +17,7 @@ class Maintenance extends Model
         'marca',
         'numero',
         'price',
+        'km',
         'fecEmit',
         'fecRenov',
         'imagen',

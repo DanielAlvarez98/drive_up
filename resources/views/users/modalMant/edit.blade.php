@@ -37,9 +37,16 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="contact-info-vertical">N°</label>
+                                    <label for="contact-info-vertical">Precio</label>
                                     <input type="number" id="price" class="form-control price" name="price"
                                         placeholder="Precio">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="contact-info-vertical">Km</label>
+                                    <input type="number" id="price" class="form-control km" name="km"
+                                        placeholder="Km">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -59,24 +66,25 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="password-vertical">Fecha de mantenimiento</label>
-                                    <input type="date" id="dfecEmit" class="form-control fecEmit" max="{{ date('Y-m-d') }}"
-                                        name="fecEmit" required>
+                                    <input type="date" id="dfecEmit" class="form-control fecEmit"
+                                        max="{{ date('Y-m-d') }}" name="fecEmit" required>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="password-vertical">Fecha de renovacion</label>
-                                    <input type="date" id="dfecRenov" class="form-control fecRenov" min="{{ date('Y-m-d') }}"
-                                        name="fecRenov" required>
+                                    <input type="date" id="dfecRenov" class="form-control fecRenov"
+                                        min="{{ date('Y-m-d') }}" name="fecRenov" required>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            {{-- <div class="col-12">
                                 <input type="file" id="imagenEditMant" name="imagen">
 
-                            </div>
+                            </div> --}}
                             <div class="col-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                <button type="button" class="btn btn-light-secondary me-1 mb-1" data-bs-dismiss="modal">
+                                <button type="button" class="btn btn-light-secondary me-1 mb-1"
+                                    data-bs-dismiss="modal">
                                     <i class="bx bx-x d-block d-sm-none"></i>
                                     Close
                                 </button>

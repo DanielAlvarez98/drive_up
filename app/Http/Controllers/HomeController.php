@@ -35,7 +35,7 @@ class HomeController extends Controller
         $limit = $today->copy()->addDays(10);
         $limitAt = $today->copy()->subDays(10);
 
-        $mants = Maintenance::where('created_at', '>=', $limitAt)->get();
+        $mants = auth()->user()->maintenances->where('created_at', '>=', $limitAt);
         $cars = auth()->user()->cars->map(function ($car) use ($today, $limit) {
 
 
@@ -250,5 +250,15 @@ class HomeController extends Controller
         $user->update($data);
 
         return redirect()->route('perfil.show')->with(['user' => $user, 'flash_message' => 'Updated!']);
+    }
+
+    public function upgradePlan()
+    {
+        $user = auth()->user();
+
+        $user->plan = 1;
+        $user->save();
+
+        return back()->with('success',);
     }
 }

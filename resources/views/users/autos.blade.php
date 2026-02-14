@@ -15,12 +15,73 @@
         <!-- Basic Tables start -->
         <section class="section">
             <div class="row" id="basic-table">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-8">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Lista de vehiculos</h4>
                         </div>
-                        <div class="card-body dataTable-container">
+                        <div class="card-body">
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                                @forelse ($cars as $car)
+                                    <div class="col">
+                                        <div class="card h-100 border rounded-3 overflow-hidden shadow-sm hover-shadow">
+
+                                            <!-- Imagen -->
+                                            <div class="position-relative bg-light" style="height: 160px;">
+                                                <img src="{{ asset('storage/' . $car->imagen) }}" alt="Nuevo S-Presso"
+                                                    class="w-100 h-100 object-fit-contain p-3">
+                                            </div>
+
+                                            <!-- Contenido -->
+                                            <div class="card-body p-3">
+                                                <h6 class="card-title text-dark fw-semibold text-truncate mb-1">
+                                                    {{ $car->modelo }}
+                                                </h6>
+
+                                                <p class="text-muted small mb-3">
+                                                    Placa: {{ $car->placa }}
+                                                </p>
+                                                <div class="text-muted small mb-4">
+                                                    <p class="mb-1 text-truncate">Marca: {{ $car->marca }}</p>
+                                                    <p class="mb-1 text-truncate">Modelo: {{ $car->modelo }}</p>
+                                                    <p class="mb-1">Año: {{ $car->anhoFab }}</p>
+                                                </div>
+
+                                                <!-- Botones -->
+                                                <div class="d-flex gap-2">
+                                                    <button type="button"
+                                                        class=" icon dripicons-document-edit btn btn-outline-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                                                        data-bs-toggle="modal" data-bs-target="#editCarModal"
+                                                        data-url='{{ route('car.update', $car) }}'
+                                                        data-send="{{ route('car.ajax', $car) }}"
+                                                        enctype="multipart/form-data">
+
+                                                        <span class="d-none d-sm-inline">Editar</span>
+                                                    </button>
+                                                    <form class="alertDelete" method="POST"
+                                                        action="{{ route('car.destroy', $car->id) }}" accept-charset="UTF-8"
+                                                        style="display:inline">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button
+                                                            class=" icon dripicons-document-delete btn btn-outline-danger btn-sm w-100 d-flex align-items-center justify-content-center gap-2">
+
+                                                            <span class="d-none d-sm-inline">Eliminar</span>
+                                                        </button>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @empty
+                                <p>No tiene vehiculos registrados</p>
+                                @endforelse
+
+
+                            </div>
+                        </div>
+                        {{-- <div class="card-body dataTable-container">
                             <table id="example" class="display">
                                 <thead>
                                     <tr>
@@ -70,15 +131,15 @@
                                     @endforelse
                                 </tbody>
                             </table>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-4">
                     <div class="card">
-                       
+
                         <div class="card-content">
                             <div class="card-body">
-                                   <div class="col-12">
+                                <div class="col-12">
                                     <h4 class="card-title">Registro</h4>
                                 </div>
                                 <form class="form form-vertical" role="form" id="createCarForm" method="POST"
@@ -190,5 +251,4 @@
     @vite(['resources/assets/css/vendors/dripicons/webfont.css'])
     @vite(['resources/assets/css/client/dripicons.css'])
     @vite(['resources/assets/js/client/car.js'])
-
 @endsection

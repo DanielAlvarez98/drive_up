@@ -18,15 +18,15 @@ class MaintenanceController extends Controller
      */
     public function index()
     {
-        $maintenances = auth()->user()->maintenances;
         $cars = auth()->user()->cars;
         $carMants = auth()->user()
-            ->maintenances()
-            ->with('car')
-            ->whereNotNull('car_id')
-            ->get()
-            ->groupBy('car_id');
-        return view('users.mantenimientos')->with(['maintenances' => $maintenances, 'cars' => $cars, 'carMants' => $carMants]);
+            ->cars()
+            ->with(['maintenances' => function ($q) {
+                $q->latest();
+            }])
+            ->has('maintenances')
+            ->get();
+        return view('users.mantenimientos')->with(['cars' => $cars, 'carMants' => $carMants]);
     }
 
     public function store(Request $request)
@@ -37,13 +37,14 @@ class MaintenanceController extends Controller
                 'marca' => 'required|string',
                 'numero' => 'nullable|string',
                 'price' => 'required|string',
+                'km' => 'required|string',
                 'fecEmit'  => 'required|string',
                 'fecRenov'  => 'required|string',
-                'imagen'  => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+                // 'imagen'  => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
                 'car_id' => 'required|string',
             ]);
             $data['user_id'] = Auth::id();
-            $data['imagen'] = $request->file('imagen')->store('mant', 'public');
+            // $data['imagen'] = $request->file('imagen')->store('mant', 'public');
 
             Maintenance::create($data);
             return redirect()->route(route: 'mant.index')->with('flash_message', 'Addedd!');
@@ -76,10 +77,11 @@ class MaintenanceController extends Controller
             'marca' => $maintenance->marca,
             'numero' => $maintenance->numero,
             'price' => $maintenance->price,
+            'km' => $maintenance->km,
 
-            'imagen'  => $maintenance->imagen
-                ? asset('storage/' . $maintenance->imagen)
-                : null,
+            // 'imagen'  => $maintenance->imagen
+            //     ? asset('storage/' . $maintenance->imagen)
+            //     : null,
             'fecEmit' => $maintenance->fecEmit,
             'fecRenov' => $maintenance->fecRenov,
             'car_id' => $maintenance->car_id,
@@ -102,20 +104,22 @@ class MaintenanceController extends Controller
                 'marca'   => 'required|string',
                 'numero'  => 'nullable|string',
                 'price'  => 'required|string',
-                'imagen'  => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                'km'  => 'required|string',
+
+                // 'imagen'  => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                 'fecEmit'  => 'required|string',
                 'fecRenov'  => 'required|string',
                 'car_id'  => 'nullable|string',
 
             ]);
-            if ($request->hasFile('imagen')) {
+            // if ($request->hasFile('imagen')) {
 
-                if ($maintenance->imagen && Storage::disk('public')->exists($maintenance->imagen)) {
-                    Storage::disk('public')->delete($maintenance->imagen);
-                }
+            //     if ($maintenance->imagen && Storage::disk('public')->exists($maintenance->imagen)) {
+            //         Storage::disk('public')->delete($maintenance->imagen);
+            //     }
 
-                $data['imagen'] = $request->file('imagen')->store('mant', 'public');
-            }
+            //     $data['imagen'] = $request->file('imagen')->store('mant', 'public');
+            // }
 
             $maintenance->update($data);
 
@@ -142,9 +146,9 @@ class MaintenanceController extends Controller
     public function destroy(Maintenance $maintenance)
     {
         try {
-            if ($maintenance->imagen && Storage::disk('public')->exists($maintenance->imagen)) {
-                Storage::disk('public')->delete($maintenance->imagen);
-            }
+            // if ($maintenance->imagen && Storage::disk('public')->exists($maintenance->imagen)) {
+            //     Storage::disk('public')->delete($maintenance->imagen);
+            // }
             $maintenance->delete();
             return redirect()->route('mant.index')->with('flash_message', 'deleted!');
         } catch (\Throwable $th) {

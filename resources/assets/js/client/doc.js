@@ -1,3 +1,5 @@
+new DataTable('#example');
+
 $(document).ready(function () {
 
     $('.personal').show();
@@ -113,3 +115,11 @@ $('#editVehModal').on('show.bs.modal', function (e) {
     modal.find('#editDocForm').attr('action', url)
 
 })
+$('#viewDoc').on('show.bs.modal', function (event) {
+
+    var button = $(event.relatedTarget);
+
+    var imagen = button.data('imagen');
+
+    $('#modalImg').attr('src', imagen);
+});

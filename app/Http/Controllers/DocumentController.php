@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 date_default_timezone_set("America/Lima");
 
@@ -22,14 +23,25 @@ class DocumentController extends Controller
 
         $cars = auth()->user()->cars;
 
-        $carDocs = auth()->user()
-            ->documents()
-            ->with('car')
-            ->whereNotNull('car_id')
-            ->get()
-            ->groupBy('car_id');
+        $today = Carbon::today();
+        $limit = Carbon::today()->addDays(7);
 
-        return view('users.documentos')->with(['documents' => $documents, 'cars' => $cars, 'carDocs' => $carDocs]);
+        $totalDocuments = $documents->count();
+
+        $vigentes = $documents->where('fecRenov', '>', $limit)->count();
+
+        $porVencer = $documents->whereBetween('fecRenov', [$today, $limit])->count();
+
+        $vencidos = $documents->where('fecRenov', '<', $today)->count();
+
+        return view('users.documentos')->with([
+            'documents' => $documents,
+            'cars' => $cars,
+            'totalDocuments' => $totalDocuments,
+            'vigentes' => $vigentes,
+            'porVencer' => $porVencer,
+            'vencidos' => $vencidos,
+        ]);
     }
 
     public function store(Request $request)

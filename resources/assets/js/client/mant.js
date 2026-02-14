@@ -22,6 +22,7 @@ $('#editMantModal').on('show.bs.modal', function (e) {
             modal.find('.marca').val(data.marca)
             modal.find('.numero').val(data.numero)
             modal.find('.price').val(data.price)
+            modal.find('.km').val(data.km)
             modal.find('.fecEmit').val(data.fecEmit)
             modal.find('.fecRenov').val(data.fecRenov)
             modal.find('.carPlaca').val(data.car_id)

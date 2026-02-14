@@ -1,4 +1,4 @@
-new DataTable('#example');
+// new DataTable('#example');
 
 //CAR
 let pondEdit = null;

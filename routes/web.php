@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('home', action: [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('upgrade-plan', [HomeController::class, 'upgradePlan'])
+        ->name('user.plan');
 
     Route::get('car-show/{car}', [HomeController::class, 'show'])->name('car.show');
     Route::get('recordatorios', [HomeController::class, 'recorda'])->name('recorda.show');

@@ -3,8 +3,8 @@
         <div class="sidebar-header" style="background-color: white">
             <div class="d-flex justify-content-center">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset('assets/logos/logodrive.png') }}" alt="" width="140px"
-                            height="90px"></a>
+                   <img src="{{ asset('assets/logos/logodrive.png') }}" alt="" width="140px"
+                            height="90px">
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>

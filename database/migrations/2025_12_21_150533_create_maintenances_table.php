@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('marca', 50);
             $table->string('numero', 15)->nullable();
             $table->decimal('price');
+            $table->decimal('km');
             $table->date('fecEmit')->nullable();
             $table->date('fecRenov')->nullable();
             $table->text('imagen')->nullable();
